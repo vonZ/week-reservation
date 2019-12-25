@@ -2,19 +2,7 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
   type Query {
-    reservations( # replace the current launches query with this one.
-      """
-      The number of results to show. Must be >= 1. Default = 20
-      """
-      pageSize: Int
-      """
-      If you add a cursor here, it will only return results _after_ this cursor
-      """
-      after: String
-    ): ReservationConnection!
     reservation(id: ID!): Reservation
-    # Queries for the current user
-    me: User
     getAllUsers: [User]
     getAllReservations: [Reservation]
   }
