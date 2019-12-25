@@ -7,6 +7,8 @@ import { HttpLink } from "apollo-link-http";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { resolvers, typeDefs } from "./resolvers";
 import injectStyles from "./styles";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Reservations from "./pages/reservations";
 
 // Set up our apollo-client to point at the server we created
 // this can be local or a remote endpoint
@@ -35,7 +37,7 @@ cache.writeData({
 injectStyles();
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <p>{"Hello from Apollo"}</p>
+    <Reservations />
   </ApolloProvider>,
   document.getElementById("root")
 );
