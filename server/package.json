@@ -1,5 +1,5 @@
 {
-  "name": "booking-api",
+  "name": "week-reservation-api",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",

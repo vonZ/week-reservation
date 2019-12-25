@@ -5,6 +5,8 @@ module.exports = {
     getAllUsers: async (_, __, { dataSources }) =>
       Promise.resolve(dataSources.userAPI.getAllUsers()),
     getAllReservations: async (_, __, { dataSources }) =>
-      Promise.resolve(dataSources.reservationAPI.getAllReservations())
+      Promise.resolve(dataSources.reservationAPI.getAllReservations()),
+    getReservationIdsByUser: async (_, { userId }, { dataSources }) =>
+      Promise.resolve(dataSources.userAPI.getReservationIdsByUser({ userId }))
   }
 };

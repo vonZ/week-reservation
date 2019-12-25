@@ -47,14 +47,11 @@ class UserAPI extends DataSource {
     return res && res.length ? res[0].get() : false;
   }
 
-  async getReservationIdsByUser() {
-    const userId = this.context.user.id;
-    const found = await this.store.reservations.findAll({
+  async getReservationIdsByUser({ userId }) {
+    const res = await this.store.reservations.findAll({
       where: { userId }
     });
-    return found && found.length
-      ? found.map(l => l.dataValues.reservationId).filter(l => !!l)
-      : [];
+    return res && res.length ? res.map(item => item[0].get()) : [];
   }
 
   async getAllUsers() {

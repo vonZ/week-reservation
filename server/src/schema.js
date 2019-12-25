@@ -5,6 +5,7 @@ const typeDefs = gql`
     reservation(id: ID!): Reservation
     getAllUsers: [User]
     getAllReservations: [Reservation]
+    getReservationIdsByUser(userId: ID!): Reservation
   }
 
   """
@@ -18,6 +19,7 @@ const typeDefs = gql`
 
   type Reservation {
     id: ID!
+    userId: Int
     fromDate: String!
     toDate: String!
     comment: String
